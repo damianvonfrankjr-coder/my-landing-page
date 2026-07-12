@@ -1,0 +1,76 @@
+/* Prime Reserve Planning — design tokens.
+ * Locked system; see ../design.md. Pages reference tokens by name only. */
+
+:root {
+  /* Colour — custom theme, anchored on brand blue (hue 240–245) */
+  --color-paper:      oklch(97.5% 0.006 240);
+  --color-paper-2:    oklch(95% 0.008 240);
+  --color-ink:        oklch(21% 0.015 245);
+  --color-ink-2:      oklch(34% 0.015 245);
+  --color-rule:       oklch(84% 0.010 240);
+  --color-rule-2:     oklch(89% 0.008 240);
+  --color-muted:      oklch(44% 0.015 245);
+  --color-neutral:    oklch(38% 0.012 245);
+  --color-accent:     oklch(50% 0.135 245);
+  --color-accent-ink: oklch(97.5% 0.006 240);
+  --color-focus:      oklch(48% 0.19 245);
+  --color-error:      oklch(50% 0.19 25);
+
+  /* Type */
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-body:    "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-outlier: "Geist Mono", ui-monospace, "SF Mono", monospace;
+
+  --text-xs:   0.8rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-md:   1.25rem;
+  --text-lg:   1.5625rem;
+  --text-xl:   1.9531rem;
+  --text-2xl:  2.4414rem;
+  --text-3xl:  3.0518rem;
+  --text-display-s: clamp(2rem, 3vw + 0.75rem, 3rem);
+  --text-display:   clamp(2.5rem, 4.5vw + 0.75rem, 4.5rem);
+
+  /* Space — 4 pt scale, named by role */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+
+  /* Motion */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long:  420ms;
+
+  /* Shape */
+  --radius-card:  8px;
+  --radius-btn:   6px;
+  --radius-input: 6px;
+
+  /* Shadow (alpha allowed here as a modifier, per color rules) */
+  --shadow-soft: 0 8px 28px -20px oklch(20% 0.02 245 / 0.5);
+  --shadow-pop:  0 12px 32px -18px oklch(20% 0.02 245 / 0.45);
+
+  /* Z-scale */
+  --z-base:     1;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-modal:    400;
+  --z-toast:    500;
+  --z-tooltip:  600;
+
+  /* Page metrics */
+  --page-max:    72rem;
+  --page-gutter: clamp(1rem, 4vw, 2.5rem);
+}

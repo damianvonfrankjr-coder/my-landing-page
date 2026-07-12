@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects.
+# Pages not rebuilt in this static duplicate route to the live Wix site
+# until their content is migrated or the domain is cut over.
+/blog          https://www.primereserveplanning.com/blog 302
+/blog/*        https://www.primereserveplanning.com/blog 302
+/international /international-reserve-studies-capital-planning 301
