@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampa Bay Local Forecast — Spectrum Killian Broadcast</title>
+    <meta name="description" content="Auto-cycling Tampa Bay forecast display driven by live National Weather Service data, with generative smooth jazz. Built for lobby and operatory screens.">
+    <link rel="stylesheet" href="kiosk.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Audio needs a gesture before it can start, so the show opens on a card. -->
+<div class="boot" id="boot">
+    <div class="boot-card">
+        <div class="boot-kicker">Spectrum Killian Dental Lab Alliance</div>
+        <h1 class="boot-title">Tampa Bay<br><span>Local Forecast</span></h1>
+        <p class="boot-copy">
+            A continuous forecast display driven by live National Weather Service data,
+            with original smooth jazz generated in your browser. Leave it running on any
+            screen — it refreshes itself and never repeats.
+        </p>
+        <button class="boot-btn" id="boot-btn" type="button">
+            <span class="boot-btn-icon" aria-hidden="true">▶</span>
+            Start the broadcast
+        </button>
+        <label class="boot-mute">
+            <input type="checkbox" id="boot-silent"> Start without music
+        </label>
+    </div>
+</div>
+
+<div class="shell">
+  <div class="stage" id="stage">
+    <div class="crt" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <!-- ── Header bar ─────────────────────────────────────────── -->
+    <header class="bar">
+        <div class="bar-left">
+            <span class="bar-mark" aria-hidden="true"></span>
+            <span class="bar-place" id="bar-place">TAMPA BAY, FL</span>
+        </div>
+        <div class="bar-mid">Spectrum Killian <span>· Tampa</span></div>
+        <div class="bar-right">
+            <span class="bar-clock" id="bar-clock">--:--</span>
+            <span class="bar-date" id="bar-date"></span>
+        </div>
+    </header>
+
+    <!-- ── Panels ─────────────────────────────────────────────── -->
+    <main class="panels" id="panels">
+
+        <!-- Title card -->
+        <section class="panel panel-intro" data-panel="intro">
+            <div class="intro-inner">
+                <div class="intro-logos">
+                    <svg width="74" height="74" viewBox="0 0 50 50" aria-hidden="true">
+                        <path d="M25 5 L40 15 L40 35 L25 45 L10 35 L10 15 Z" fill="#7fe3ff" opacity="0.5"/>
+                        <path d="M25 10 L35 17 L35 33 L25 40 L15 33 L15 17 Z" fill="#1fa8d8"/>
+                    </svg>
+                    <div class="intro-lockup">
+                        <div class="intro-brand">SPECTRUM KILLIAN</div>
+                        <div class="intro-sub">DENTAL LAB ALLIANCE</div>
+                    </div>
+                </div>
+                <h2 class="intro-head">Tampa Bay<br>Local Forecast</h2>
+                <div class="intro-strip" id="intro-strip">Live from the National Weather Service</div>
+            </div>
+        </section>
+
+        <!-- Current conditions -->
+        <section class="panel panel-current" data-panel="current">
+            <h2 class="panel-head">Current Conditions</h2>
+            <div class="cur-grid">
+                <div class="cur-main">
+                    <div class="cur-icon" id="cur-icon"></div>
+                    <div class="cur-temp" id="cur-temp">--<span>°</span></div>
+                    <div class="cur-cond" id="cur-cond">—</div>
+                </div>
+                <dl class="cur-metrics">
+                    <div><dt>Feels Like</dt><dd id="cur-feels">--°</dd></div>
+                    <div><dt>Humidity</dt><dd id="cur-humidity">--%</dd></div>
+                    <div><dt>Wind</dt><dd id="cur-wind">--</dd></div>
+                    <div><dt>Pressure</dt><dd id="cur-pressure">--</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- Extended forecast -->
+        <section class="panel panel-forecast" data-panel="forecast">
+            <h2 class="panel-head">Extended Forecast</h2>
+            <div class="fc-row" id="fc-row"></div>
+        </section>
+
+        <!-- Courier / case logistics -->
+        <section class="panel panel-logi" data-panel="logistics">
+            <h2 class="panel-head">Case Logistics</h2>
+            <div class="logi-inner">
+                <div class="logi-status" id="logi-status">
+                    <div class="logi-dot" aria-hidden="true"></div>
+                    <div class="logi-label" id="logi-label">—</div>
+                </div>
+                <p class="logi-copy" id="logi-copy"></p>
+                <div class="logi-rows">
+                    <div class="logi-row"><span>Courier Pickup</span><b id="logi-pickup">—</b></div>
+                    <div class="logi-row"><span>Rush / Same-Day</span><b id="logi-rush">—</b></div>
+                    <div class="logi-row"><span>Digital Case Intake</span><b>Always Online</b></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Active NWS alert (only enters rotation when one exists) -->
+        <section class="panel panel-alert" data-panel="alert">
+            <h2 class="panel-head alert-head">Weather Advisory</h2>
+            <div class="alert-inner">
+                <svg class="alert-glyph" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2.6 L22.6 21.2 H1.4 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M12 9 v5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+                    <circle cx="12" cy="17.6" r="1.15" fill="currentColor"/>
+                </svg>
+                <div class="alert-body">
+                    <div class="alert-event" id="alert-event">—</div>
+                    <div class="alert-meta" id="alert-meta"></div>
+                    <p class="alert-copy" id="alert-copy"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The offer -->
+        <section class="panel panel-offer" data-panel="offer">
+            <div class="offer-inner">
+                <div class="offer-kicker">New Tampa Bay MB2 Partners</div>
+                <h2 class="offer-head">Your first five<br>cases are on us</h2>
+                <p class="offer-copy">
+                    Five complimentary cases, no restrictions or limits, for the first
+                    30 days after sign-up.
+                </p>
+                <div class="offer-contact">
+                    <div><span>Call</span><b>448-400-5277</b></div>
+                    <div><span>Email</span><b>tori.finkelstein@skdla.com</b></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ── Crawl ──────────────────────────────────────────────── -->
+    <footer class="crawl">
+        <div class="crawl-tag" id="crawl-tag">TAMPA BAY</div>
+        <div class="crawl-track"><div class="crawl-text" id="crawl-text"></div></div>
+    </footer>
+
+    <!-- Panel position dots -->
+    <div class="dots" id="dots" aria-hidden="true"></div>
+  </div>
+</div>
+
+<!-- ── Controls ───────────────────────────────────────────────── -->
+<div class="controls" id="controls">
+    <button type="button" id="btn-music" class="ctl" title="Toggle music">
+        <span id="btn-music-label">♪ Music On</span>
+    </button>
+    <input type="range" id="vol" class="ctl-vol" min="0" max="100" value="55" title="Volume" aria-label="Music volume">
+    <button type="button" id="btn-prev" class="ctl" title="Previous panel">‹</button>
+    <button type="button" id="btn-next" class="ctl" title="Next panel">›</button>
+    <button type="button" id="btn-full" class="ctl" title="Fullscreen">⛶ Fullscreen</button>
+    <a class="ctl ctl-link" href="index.html" title="Back to the landing page">← Page</a>
+</div>
+
+<script src="wx-data.js"></script>
+<script src="jazz.js"></script>
+<script src="kiosk.js"></script>
+</body>
+</html>

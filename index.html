@@ -100,12 +100,21 @@
                         Tampa Bay office (TBW) · auto-refreshes every 10 minutes
                     </p>
                 </div>
-                <button class="wx-refresh" id="wx-refresh" type="button" aria-label="Refresh weather data now">
-                    <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true">
-                        <path d="M14 8a6 6 0 1 1-1.8-4.3M14 1v4h-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span>Refresh</span>
-                </button>
+                <div class="wx-actions">
+                    <a class="wx-refresh wx-broadcast" href="kiosk.html" title="Full-screen forecast display for a lobby or operatory screen">
+                        <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true">
+                            <rect x="1" y="2.5" width="14" height="9.5" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M5.5 14.5h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Broadcast mode</span>
+                    </a>
+                    <button class="wx-refresh" id="wx-refresh" type="button" aria-label="Refresh weather data now">
+                        <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M14 8a6 6 0 1 1-1.8-4.3M14 1v4h-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Refresh</span>
+                    </button>
+                </div>
             </div>
 
             <!-- Live alert banner (only rendered when NWS reports an active alert) -->
@@ -368,6 +377,7 @@
         </footer>
     </div>
 
+    <script src="wx-data.js"></script>
     <script src="weather.js"></script>
 </body>
 </html>

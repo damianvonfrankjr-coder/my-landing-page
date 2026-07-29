@@ -320,6 +320,15 @@ a { color: inherit; }
 }
 .wx-source strong { color: var(--accent); font-weight: 500; }
 
+.wx-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.wx-broadcast {
+    text-decoration: none;
+    color: var(--accent);
+    border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    background: var(--accent-soft);
+}
+
 .wx-refresh {
     display: inline-flex;
     align-items: center;
