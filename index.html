@@ -3,270 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spectrum Killian & MB2 Dental - First 5 Cases Free</title>
+    <title>Spectrum Killian &amp; MB2 Dental — Tampa Bay | First 5 Cases Free</title>
+    <meta name="description" content="Spectrum Killian Dental Lab Alliance x MB2 Dental — five complimentary cases for new Tampa Bay partners, with a live National Weather Service courier status board.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         LIVE STATUS RAIL — populated by weather.js from api.weather.gov
+         ══════════════════════════════════════════════════════════ -->
+    <div class="status-rail" id="status-rail" data-state="loading">
+        <div class="rail-inner">
+            <span class="live-dot" aria-hidden="true"></span>
+            <span class="rail-label">Tampa Bay · Live</span>
+            <span class="rail-sep" aria-hidden="true"></span>
+            <span class="rail-readout" id="rail-readout">Contacting the National Weather Service…</span>
+            <span class="rail-spacer"></span>
+            <span class="rail-stamp" id="rail-stamp"></span>
+        </div>
+    </div>
+
     <div class="container">
         <!-- Header -->
-        <header class="header">
+        <header class="header reveal">
             <div class="logos">
                 <div class="logo-spectrum">
-                    <svg width="50" height="50" viewBox="0 0 50 50">
-                        <path d="M25 5 L40 15 L40 35 L25 45 L10 35 L10 15 Z" fill="#4A9FD8" opacity="0.7"/>
-                        <path d="M25 10 L35 17 L35 33 L25 40 L15 33 L15 17 Z" fill="#2E7DB3"/>
+                    <svg width="46" height="46" viewBox="0 0 50 50" aria-hidden="true">
+                        <path d="M25 5 L40 15 L40 35 L25 45 L10 35 L10 15 Z" fill="var(--surf)" opacity="0.55"/>
+                        <path d="M25 10 L35 17 L35 33 L25 40 L15 33 L15 17 Z" fill="var(--gulf)"/>
                     </svg>
                     <div class="logo-text">
                         <span class="logo-title">SPECTRUM KILLIAN</span>
                         <span class="logo-subtitle">DENTAL LAB ALLIANCE</span>
                     </div>
                 </div>
-                <div class="divider"></div>
+                <div class="divider" aria-hidden="true"></div>
                 <div class="logo-mb2">
-                    <svg width="50" height="50" viewBox="0 0 50 50">
-                        <circle cx="20" cy="25" r="12" fill="#E74C3C"/>
-                        <circle cx="30" cy="25" r="12" fill="#3498DB"/>
+                    <svg width="46" height="46" viewBox="0 0 50 50" aria-hidden="true">
+                        <circle cx="20" cy="25" r="12" fill="var(--sunset)" opacity="0.9"/>
+                        <circle cx="30" cy="25" r="12" fill="var(--surf)" opacity="0.85"/>
                     </svg>
                     <span class="logo-mb2-text"><strong>MB2</strong>DENTAL</span>
                 </div>
             </div>
+            <div class="market-badge">
+                <svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true">
+                    <path d="M6 0.5 C3.5 0.5 1.8 2.3 1.8 4.6 C1.8 7.7 6 11.5 6 11.5 C6 11.5 10.2 7.7 10.2 4.6 C10.2 2.3 8.5 0.5 6 0.5 Z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+                    <circle cx="6" cy="4.6" r="1.5" fill="currentColor"/>
+                </svg>
+                TAMPA BAY, FLORIDA
+            </div>
         </header>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1 class="hero-title">YOUR FIRST FIVE CASES ARE ON US</h1>
+        <!-- Hero -->
+        <section class="hero reveal" style="--d:.06s">
+            <p class="hero-eyebrow">Exclusive to the Tampa Bay market</p>
+            <h1 class="hero-title">Your first five<br><em>cases are on us</em></h1>
             <p class="hero-subtitle">
-                Welcome to the Alliance. To celebrate our partnership, we are offering <strong>five complimentary cases</strong> for all new MB2 accounts. Experience the precision of both centers with zero restrictions.
+                Welcome to the Alliance. To celebrate our partnership, we are offering
+                <strong>five complimentary cases</strong> for all new MB2 accounts across Tampa,
+                St. Petersburg, Clearwater and Brandon. Experience the precision of our
+                Tampa Bay center with zero restrictions.
             </p>
         </section>
 
         <!-- Info Cards -->
-        <div class="info-cards">
+        <div class="info-cards reveal" style="--d:.12s">
             <div class="info-card">
-                <div class="info-label">PROMOTION PERIOD</div>
+                <div class="info-label">Promotion Period</div>
                 <div class="info-value">First 30 Days of Sign-up</div>
             </div>
             <div class="info-card">
-                <div class="info-label">ELIGIBILITY</div>
+                <div class="info-label">Eligibility</div>
                 <div class="info-value">No Restrictions or Limits</div>
             </div>
             <div class="info-card">
-                <div class="info-label">OFFER VALID FOR</div>
-                <div class="info-value">New MB2 Partners</div>
+                <div class="info-label">Offer Valid For</div>
+                <div class="info-value">New Tampa Bay MB2 Partners</div>
             </div>
         </div>
 
-        <!-- Centers of Excellence -->
-        <section class="centers-section">
-            <h2 class="centers-title">CENTERS OF EXCELLENCE</h2>
-
-            <div class="centers-grid">
-                <!-- Orange County -->
-                <div class="center">
-                    <h3 class="center-name">Orange County</h3>
-                    <p class="center-tagline">The Modern Comprehensive Solution.</p>
-                    <div class="map-placeholder">
-                        <svg width="100%" height="150" viewBox="0 0 400 150">
-                            <rect width="400" height="150" fill="#E8F4F8"/>
-                            <path d="M50,100 Q100,80 150,90 T250,85 T350,95" stroke="#4A9FD8" stroke-width="2" fill="none"/>
-                            <circle cx="180" cy="75" r="8" fill="#2E7DB3"/>
-                            <path d="M180,75 L180,90" stroke="#2E7DB3" stroke-width="2"/>
+        <!-- ══════════════════════════════════════════════════════════
+             LIVE WEATHER + CASE LOGISTICS BOARD
+             Data: api.weather.gov (NWS office TBW, grid 71,98) + Open-Meteo
+             ══════════════════════════════════════════════════════════ -->
+        <section class="wx reveal" id="wx" data-state="loading" style="--d:.18s" aria-labelledby="wx-title">
+            <div class="wx-head">
+                <div>
+                    <h2 class="wx-title" id="wx-title">Tampa Bay Case Logistics</h2>
+                    <p class="wx-source">
+                        Live from the <strong>National Weather Service</strong> ·
+                        Tampa Bay office (TBW) · auto-refreshes every 10 minutes
+                    </p>
+                </div>
+                <div class="wx-actions">
+                    <a class="wx-refresh wx-broadcast" href="kiosk.html" title="Full-screen forecast display for a lobby or operatory screen">
+                        <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true">
+                            <rect x="1" y="2.5" width="14" height="9.5" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M5.5 14.5h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                         </svg>
+                        <span>Broadcast mode</span>
+                    </a>
+                    <button class="wx-refresh" id="wx-refresh" type="button" aria-label="Refresh weather data now">
+                        <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M14 8a6 6 0 1 1-1.8-4.3M14 1v4h-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Refresh</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Live alert banner (only rendered when NWS reports an active alert) -->
+            <div class="wx-alerts" id="wx-alerts" hidden></div>
+
+            <div class="wx-body">
+                <!-- Current conditions -->
+                <div class="wx-now">
+                    <div class="radar" aria-hidden="true">
+                        <span class="radar-sweep"></span>
+                        <span class="radar-ring r1"></span>
+                        <span class="radar-ring r2"></span>
+                        <span class="radar-ring r3"></span>
+                        <span class="radar-pip"></span>
                     </div>
-                    <div class="center-info">
-                        <h4 class="lab-name">Spectrum Killian Dental Lab</h4>
-                        <p class="lab-address">
-                            <svg width="12" height="12" viewBox="0 0 12 12" class="icon">
-                                <path d="M6 0 L8 4 L12 4 L9 7 L10 11 L6 8 L2 11 L3 7 L0 4 L4 4 Z" fill="#2E7DB3"/>
-                            </svg>
-                            2850 Red Hill Ave, Suite 200 Santa Ana, CA 92705
-                        </p>
-                        <p class="lab-phone">
-                            <svg width="12" height="12" viewBox="0 0 12 12" class="icon">
-                                <rect x="3" y="1" width="6" height="10" rx="1" stroke="#2E7DB3" fill="none"/>
-                            </svg>
-                            800-317-7100
-                        </p>
-                        <div class="lab-logo-small">
-                            <span>SPECTRUM KILLIAN</span>
-                        </div>
+                    <div class="now-readout">
+                        <div class="now-temp" id="now-temp">--<span class="deg">°</span></div>
+                        <div class="now-cond" id="now-cond">Loading conditions…</div>
+                        <dl class="now-metrics">
+                            <div><dt>Feels like</dt><dd id="now-feels">--°</dd></div>
+                            <div><dt>Humidity</dt><dd id="now-humidity">--%</dd></div>
+                            <div><dt>Wind</dt><dd id="now-wind">-- mph</dd></div>
+                        </dl>
                     </div>
                 </div>
 
-                <!-- Los Angeles (da Vinci) -->
+                <!-- Courier status derived from live conditions -->
+                <div class="wx-status" id="wx-status">
+                    <div class="status-chip" id="status-chip">
+                        <span class="chip-pulse" aria-hidden="true"></span>
+                        <span id="status-chip-text">Checking…</span>
+                    </div>
+                    <p class="status-copy" id="status-copy">
+                        Pulling the current Tampa Bay forecast to determine today's
+                        case pickup and delivery outlook.
+                    </p>
+                    <ul class="status-lines">
+                        <li><span>Courier pickup</span><b id="line-pickup">—</b></li>
+                        <li><span>Rush / same-day</span><b id="line-rush">—</b></li>
+                        <li><span>Digital case intake</span><b id="line-digital">Always online</b></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- NWS forecast strip -->
+            <div class="wx-forecast" id="wx-forecast" aria-label="Five period National Weather Service forecast">
+                <div class="fc-card skeleton"></div>
+                <div class="fc-card skeleton"></div>
+                <div class="fc-card skeleton"></div>
+                <div class="fc-card skeleton"></div>
+                <div class="fc-card skeleton"></div>
+            </div>
+
+            <p class="wx-foot" id="wx-foot">
+                Storm season runs June 1 – November 30. During named-storm activity this board
+                reflects the live NWS advisory for Hillsborough County, and your account manager
+                will contact you directly about any case in transit.
+            </p>
+        </section>
+
+        <!-- Center of Excellence — Tampa -->
+        <section class="centers-section reveal" style="--d:.24s">
+            <h2 class="centers-title">Center of Excellence</h2>
+
+            <div class="centers-grid">
                 <div class="center">
-                    <h3 class="center-name">Los Angeles (da Vinci)</h3>
-                    <p class="center-tagline">The Standard for Esthetic Perfection.</p>
-                    <div class="map-placeholder">
-                        <svg width="100%" height="150" viewBox="0 0 400 150">
-                            <rect width="400" height="150" fill="#F0F8F0"/>
-                            <path d="M50,90 Q120,70 200,85 T350,80" stroke="#8BC34A" stroke-width="2" fill="none"/>
-                            <circle cx="220" cy="70" r="8" fill="#689F38"/>
-                            <path d="M220,70 L220,85" stroke="#689F38" stroke-width="2"/>
+                    <h3 class="center-name">Tampa Bay</h3>
+                    <p class="center-tagline">The Modern Comprehensive Solution — and the Standard for Esthetic Perfection.</p>
+                    <div class="map-frame">
+                        <!-- Stylized Tampa Bay coastline -->
+                        <svg width="100%" height="170" viewBox="0 0 400 170" role="img" aria-label="Stylized map of Tampa Bay">
+                            <defs>
+                                <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#0d3d52"/>
+                                    <stop offset="100%" stop-color="#072536"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="170" fill="url(#water)"/>
+                            <!-- land mass -->
+                            <path d="M0,0 L400,0 L400,170 L250,170 C250,140 232,132 228,110 C224,88 236,74 232,58 C228,42 208,40 196,52 C184,64 190,84 180,96 C170,108 150,104 140,118 C130,132 136,152 128,170 L0,170 Z"
+                                  fill="#0a2b3c" stroke="rgba(79,209,197,.35)" stroke-width="1"/>
+                            <!-- bay inlet -->
+                            <path d="M196,52 C208,40 228,42 232,58 C236,74 224,88 228,110 C232,132 250,140 250,170"
+                                  fill="none" stroke="rgba(79,209,197,.6)" stroke-width="1.5"/>
+                            <!-- grid -->
+                            <g stroke="rgba(255,255,255,.05)" stroke-width="1">
+                                <path d="M0,42 H400 M0,85 H400 M0,128 H400 M80,0 V170 M160,0 V170 M240,0 V170 M320,0 V170"/>
+                            </g>
+                            <!-- marker -->
+                            <g transform="translate(213,74)">
+                                <circle r="17" fill="rgba(255,107,74,.14)">
+                                    <animate attributeName="r" values="13;24;13" dur="3.2s" repeatCount="indefinite"/>
+                                    <animate attributeName="opacity" values=".5;0;.5" dur="3.2s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle r="6" fill="#ff6b4a"/>
+                                <circle r="2.2" fill="#fff"/>
+                            </g>
+                            <text x="228" y="70" fill="#f4ead8" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2">TAMPA</text>
+                            <text x="150" y="150" fill="rgba(244,234,216,.45)" font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.2">GULF OF MEXICO</text>
                         </svg>
                     </div>
                     <div class="center-info">
-                        <h4 class="lab-name">da Vinci Dental Studios</h4>
-                        <p class="lab-address">
-                            <svg width="12" height="12" viewBox="0 0 12 12" class="icon">
-                                <path d="M6 0 L8 4 L12 4 L9 7 L10 11 L6 8 L2 11 L3 7 L0 4 L4 4 Z" fill="#689F38"/>
+                        <h4 class="lab-name">Spectrum Killian Dental Lab — Tampa</h4>
+                        <p class="lab-line">
+                            <svg width="12" height="12" viewBox="0 0 12 12" class="icon" aria-hidden="true">
+                                <path d="M6 0.5 C3.5 0.5 1.8 2.3 1.8 4.6 C1.8 7.7 6 11.5 6 11.5 C6 11.5 10.2 7.7 10.2 4.6 C10.2 2.3 8.5 0.5 6 0.5 Z" fill="none" stroke="var(--gulf)" stroke-width="1.2"/>
+                                <circle cx="6" cy="4.6" r="1.5" fill="var(--gulf)"/>
                             </svg>
-                            8521 Fallbrook Ave, Suite 300 West Hills, CA 91304
+                            <span class="needs-input" data-hint="Add your Tampa street address">Tampa lab street address</span>
                         </p>
-                        <p class="lab-phone">
-                            <svg width="12" height="12" viewBox="0 0 12 12" class="icon">
-                                <rect x="3" y="1" width="6" height="10" rx="1" stroke="#689F38" fill="none"/>
+                        <p class="lab-line">
+                            <svg width="12" height="12" viewBox="0 0 12 12" class="icon" aria-hidden="true">
+                                <rect x="3" y="1" width="6" height="10" rx="1.2" stroke="var(--gulf)" fill="none" stroke-width="1.2"/>
+                                <path d="M5 9.2 h2" stroke="var(--gulf)" stroke-width="1.2" stroke-linecap="round"/>
                             </svg>
-                            800-874-7239
+                            <a href="tel:+18003177100">800-317-7100</a>
                         </p>
-                        <div class="lab-logo-small davinci">
-                            <span>da Vinci</span>
+                        <p class="lab-line">
+                            <svg width="12" height="12" viewBox="0 0 12 12" class="icon" aria-hidden="true">
+                                <circle cx="6" cy="6" r="5" fill="none" stroke="var(--gulf)" stroke-width="1.2"/>
+                                <path d="M6 3 V6 L8 7.2" fill="none" stroke="var(--gulf)" stroke-width="1.2" stroke-linecap="round"/>
+                            </svg>
+                            Courier routes: Tampa · St. Pete · Clearwater · Brandon
+                        </p>
+                        <div class="lab-tag">SPECTRUM KILLIAN · TAMPA</div>
+                    </div>
+                </div>
+
+                <div class="center center-alt">
+                    <h3 class="center-name">What ships from Tampa</h3>
+                    <p class="center-tagline">One roof. Two specialty tracks. No case leaves the bay.</p>
+                    <div class="track">
+                        <div class="track-num">01</div>
+                        <div>
+                            <h4>Restorative &amp; Implant</h4>
+                            <p>Posterior crowns, bridges, and comprehensive implant cases requiring simplicity and durability.</p>
+                        </div>
+                    </div>
+                    <div class="track">
+                        <div class="track-num">02</div>
+                        <div>
+                            <h4>Esthetic Studio</h4>
+                            <p>High-stakes anterior cases where shade matching, translucency, and lifelike esthetics are everything.</p>
+                        </div>
+                    </div>
+                    <div class="track">
+                        <div class="track-num">03</div>
+                        <div>
+                            <h4>Digital &amp; Same-Day</h4>
+                            <p>Intraoral scan intake, guided surgery planning, and milled provisionals routed same-day.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Service Comparison Table -->
+            <!-- Service table — Tampa's two tracks -->
             <div class="service-table">
                 <div class="table-header">
-                    <div class="table-cell header-cell">SERVICE CATEGORY</div>
-                    <div class="table-cell header-cell">SPECTRUM KILLIAN (OC)</div>
-                    <div class="table-cell header-cell">DA VINCI (LA)</div>
+                    <div class="table-cell header-cell">Service Category</div>
+                    <div class="table-cell header-cell">Restorative &amp; Implant</div>
+                    <div class="table-cell header-cell">Esthetic Studio</div>
                 </div>
 
                 <div class="table-subheader">
                     <div class="table-cell"></div>
                     <div class="table-cell subheader-text">
-                        <strong>Everyday Dentistry & Implants</strong><br>
+                        <strong>Everyday Dentistry &amp; Implants</strong>
                         <span>Posterior crowns, bridges, and comprehensive implant cases requiring simplicity and durability.</span>
                     </div>
                     <div class="table-cell subheader-text">
-                        <strong>Smile Makeovers & Anterior</strong><br>
+                        <strong>Smile Makeovers &amp; Anterior</strong>
                         <span>High-stakes anterior cases where shade matching, translucency, and lifelike esthetics are everything.</span>
                     </div>
                 </div>
 
-                <div class="table-row">
-                    <div class="table-cell row-label">Best For...</div>
-                    <div class="table-cell"></div>
-                    <div class="table-cell"></div>
-                </div>
-
-                <div class="table-row">
-                    <div class="table-cell">Crown & Bridge</div>
-                    <div class="table-cell checkmark">✓</div>
-                    <div class="table-cell checkmark">✓</div>
-                </div>
-
-                <div class="table-row">
-                    <div class="table-cell">Digital Solutions</div>
-                    <div class="table-cell checkmark">✓</div>
-                    <div class="table-cell checkmark">✓</div>
-                </div>
-
-                <div class="table-row">
-                    <div class="table-cell">Education</div>
-                    <div class="table-cell checkmark">✓</div>
-                    <div class="table-cell checkmark">✓</div>
-                </div>
-
-                <div class="table-row">
-                    <div class="table-cell">Removable</div>
-                    <div class="table-cell checkmark">✓</div>
-                    <div class="table-cell dash">—</div>
-                </div>
-
-                <div class="table-row">
-                    <div class="table-cell">Full-Arch</div>
-                    <div class="table-cell checkmark">✓</div>
-                    <div class="table-cell dash">—</div>
-                </div>
-
-                <div class="table-row">
-                    <div class="table-cell">High Esthetics</div>
-                    <div class="table-cell dash">—</div>
-                    <div class="table-cell premium">
-                        <span class="premium-badge">Premium Specialty</span>
-                    </div>
-                </div>
+                <div class="table-row"><div class="table-cell row-label">Crown &amp; Bridge</div><div class="table-cell checkmark">✓</div><div class="table-cell checkmark">✓</div></div>
+                <div class="table-row"><div class="table-cell row-label">Digital Solutions</div><div class="table-cell checkmark">✓</div><div class="table-cell checkmark">✓</div></div>
+                <div class="table-row"><div class="table-cell row-label">Education</div><div class="table-cell checkmark">✓</div><div class="table-cell checkmark">✓</div></div>
+                <div class="table-row"><div class="table-cell row-label">Removable</div><div class="table-cell checkmark">✓</div><div class="table-cell dash">—</div></div>
+                <div class="table-row"><div class="table-cell row-label">Full-Arch</div><div class="table-cell checkmark">✓</div><div class="table-cell dash">—</div></div>
+                <div class="table-row"><div class="table-cell row-label">High Esthetics</div><div class="table-cell dash">—</div><div class="table-cell premium"><span class="premium-badge">Premium Specialty</span></div></div>
             </div>
         </section>
 
-        <!-- Call to Action -->
-        <section class="cta-section">
+        <!-- CTA -->
+        <section class="cta-section reveal" style="--d:.3s">
             <div class="cta-content">
-                <div class="cta-image">
-                    <div class="image-placeholder">
-                        <svg width="120" height="150" viewBox="0 0 120 150">
-                            <rect width="120" height="150" fill="#E0E0E0" rx="8"/>
-                            <circle cx="60" cy="45" r="20" fill="#999"/>
-                            <rect x="30" y="75" width="60" height="40" fill="#999" rx="4"/>
-                            <rect x="20" y="120" width="80" height="20" fill="#999" rx="4"/>
-                        </svg>
-                    </div>
-                </div>
                 <div class="cta-text">
-                    <h2 class="cta-title">Get Started Today</h2>
+                    <h2 class="cta-title">Get started today</h2>
                     <p class="cta-description">
-                        Schedule your 30-minute onboarding call with your account manager to activate your 5 complimentary cases.
+                        Schedule your 30-minute onboarding call with your Tampa Bay account manager
+                        to activate your 5 complimentary cases.
                     </p>
                     <div class="contact-info">
                         <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" class="contact-icon">
-                                <circle cx="12" cy="12" r="10" stroke="#2E7DB3" stroke-width="2" fill="none"/>
-                                <path d="M12 6 L12 12 L16 14" stroke="#2E7DB3" stroke-width="2" fill="none"/>
+                            <svg width="22" height="22" viewBox="0 0 24 24" class="contact-icon" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6" fill="none"/>
+                                <path d="M12 6.5 V12 L15.5 14" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/>
                             </svg>
                             <div>
-                                <div class="contact-label">Phone Number:</div>
-                                <div class="contact-value">448-400-5277</div>
+                                <div class="contact-label">Phone Number</div>
+                                <a class="contact-value" href="tel:+14484005277">448-400-5277</a>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" class="contact-icon">
-                                <rect x="4" y="6" width="16" height="12" stroke="#2E7DB3" stroke-width="2" fill="none" rx="2"/>
-                                <path d="M4 8 L12 13 L20 8" stroke="#2E7DB3" stroke-width="2" fill="none"/>
+                            <svg width="22" height="22" viewBox="0 0 24 24" class="contact-icon" aria-hidden="true">
+                                <rect x="3.5" y="6" width="17" height="12" stroke="currentColor" stroke-width="1.6" fill="none" rx="2.5"/>
+                                <path d="M4 8 L12 13.2 L20 8" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/>
                             </svg>
                             <div>
-                                <div class="contact-label">Email:</div>
-                                <div class="contact-value">tori.finkelstein@skdla.com</div>
+                                <div class="contact-label">Email</div>
+                                <a class="contact-value" href="mailto:tori.finkelstein@skdla.com?subject=Tampa%20Bay%20MB2%20onboarding%20%E2%80%94%205%20complimentary%20cases">tori.finkelstein@skdla.com</a>
                             </div>
                         </div>
                     </div>
+                    <a class="cta-button" href="mailto:tori.finkelstein@skdla.com?subject=Tampa%20Bay%20MB2%20onboarding%20%E2%80%94%205%20complimentary%20cases&amp;body=Practice%20name%3A%0APractice%20address%3A%0APreferred%20call%20time%3A%0A">
+                        Book my onboarding call
+                        <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M2.5 8 H13 M9 4 L13 8 L9 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
                 </div>
                 <div class="qr-code">
-                    <div class="qr-placeholder">
-                        <svg width="120" height="120" viewBox="0 0 120 120">
-                            <rect width="120" height="120" fill="white" stroke="#2E7DB3" stroke-width="4"/>
-                            <rect x="10" y="10" width="30" height="30" fill="#2E7DB3"/>
-                            <rect x="80" y="10" width="30" height="30" fill="#2E7DB3"/>
-                            <rect x="10" y="80" width="30" height="30" fill="#2E7DB3"/>
-                            <rect x="15" y="15" width="20" height="20" fill="white"/>
-                            <rect x="85" y="15" width="20" height="20" fill="white"/>
-                            <rect x="15" y="85" width="20" height="20" fill="white"/>
-                            <rect x="50" y="30" width="10" height="10" fill="#2E7DB3"/>
-                            <rect x="70" y="50" width="10" height="10" fill="#2E7DB3"/>
-                            <rect x="30" y="70" width="10" height="10" fill="#2E7DB3"/>
-                            <rect x="60" y="80" width="15" height="15" fill="#2E7DB3"/>
+                    <div class="qr-frame">
+                        <svg width="118" height="118" viewBox="0 0 120 120" role="img" aria-label="QR code placeholder">
+                            <rect width="120" height="120" fill="#f4ead8" rx="6"/>
+                            <g fill="#072536">
+                                <rect x="10" y="10" width="30" height="30"/><rect x="80" y="10" width="30" height="30"/><rect x="10" y="80" width="30" height="30"/>
+                            </g>
+                            <g fill="#f4ead8">
+                                <rect x="16" y="16" width="18" height="18"/><rect x="86" y="16" width="18" height="18"/><rect x="16" y="86" width="18" height="18"/>
+                            </g>
+                            <g fill="#072536">
+                                <rect x="21" y="21" width="8" height="8"/><rect x="91" y="21" width="8" height="8"/><rect x="21" y="91" width="8" height="8"/>
+                                <rect x="50" y="14" width="7" height="7"/><rect x="62" y="26" width="7" height="7"/><rect x="50" y="38" width="7" height="7"/>
+                                <rect x="14" y="50" width="7" height="7"/><rect x="26" y="62" width="7" height="7"/><rect x="38" y="50" width="7" height="7"/>
+                                <rect x="50" y="50" width="7" height="7"/><rect x="62" y="62" width="7" height="7"/><rect x="74" y="50" width="7" height="7"/>
+                                <rect x="86" y="62" width="7" height="7"/><rect x="98" y="50" width="7" height="7"/><rect x="50" y="74" width="7" height="7"/>
+                                <rect x="62" y="86" width="7" height="7"/><rect x="74" y="98" width="7" height="7"/><rect x="86" y="86" width="7" height="7"/>
+                                <rect x="98" y="98" width="7" height="7"/><rect x="74" y="74" width="14" height="14"/>
+                            </g>
                         </svg>
                     </div>
-                    <p class="qr-label">CLICK/SCAN<br>TO BOOK CALL</p>
+                    <p class="qr-label">Scan to<br>book your call</p>
+                    <p class="qr-note needs-input" data-hint="Swap for a real QR pointing at your booking link">Placeholder QR</p>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="footer">
+        <footer class="footer reveal" style="--d:.36s">
             <div class="footer-note">
-                <p><strong>* PLEASE NOTE TO THE LAB WHAT # CASE YOU'RE ON IN YOUR RX NOTES.</strong></p>
-                <p>* Usage tracked by your dedicated Account Manager. Offer expires 30 days after account activation.</p>
+                <p><strong>* Please note to the lab what # case you're on in your Rx notes.</strong></p>
+                <p>* Usage tracked by your dedicated Tampa Bay account manager. Offer expires 30 days after account activation.</p>
             </div>
             <div class="footer-copyright">
-                Spectrum Killian Dental Lab Alliance 2026 ©
+                Spectrum Killian Dental Lab Alliance · Tampa Bay 2026 ©
+                <span class="footer-attr">Weather data courtesy of the U.S. National Weather Service (NOAA), a public-domain source.</span>
             </div>
         </footer>
     </div>
+
+    <script src="wx-data.js"></script>
+    <script src="weather.js"></script>
 </body>
 </html>
